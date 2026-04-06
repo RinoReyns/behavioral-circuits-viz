@@ -9,7 +9,7 @@ description = "Causal Visualization of Behavioral Circuits in Language Models"
 requires-python = ">=3.10"
 dependencies = [
     "transformer_lens>=1.19.0",
-    "torch>=2.1,<2.3",
+    "torch>=2.1,<2.12",
     "transformers>=4.38.0",
     "scikit-learn>=1.4.0",
     "plotly>=5.20.0",
