@@ -82,8 +82,8 @@ def main(config_path):
                 "type": "single",
                 "label": label,
                 "activation_norm": {
-                    f"layer_{l}": cache["resid_post", l].norm().item()
-                    for l in range(n_layers)
+                    f"layer_{layer}": cache["resid_post", layer].norm().item()
+                    for layer in range(n_layers)
                 }
             })
 
