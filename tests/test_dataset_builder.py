@@ -1,5 +1,4 @@
 """Tests for data pairing logic, JSONL format, and train/test splits."""
-import pytest
 
 
 def test_pair_structure():

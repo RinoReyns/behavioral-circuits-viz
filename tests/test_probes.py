@@ -1,5 +1,4 @@
 """Tests probe training correctness on synthetic toy data."""
-import pytest
 
 
 def test_placeholder():
