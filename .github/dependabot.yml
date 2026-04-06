@@ -1,0 +1,92 @@
+# .github/dependabot.yml
+# Dependabot configuration for behavioral-circuits-viz
+# Docs: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+
+updates:
+
+  # ── Python dependencies (pyproject.toml) ───────────────────────────────────
+  - package-ecosystem: "pip"
+    directory: "/"                        # pyproject.toml lives at repo root
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/Warsaw"
+    open-pull-requests-limit: 10
+
+    # Group all non-breaking updates into a single PR to reduce noise
+    groups:
+      ml-core:
+        patterns:
+          - "torch"
+          - "transformer_lens"
+          - "transformers"
+          - "einops"
+          - "baukit"
+        update-types:
+          - "minor"
+          - "patch"
+
+      visualization:
+        patterns:
+          - "plotly"
+          - "matplotlib"
+        update-types:
+          - "minor"
+          - "patch"
+
+      app-and-data:
+        patterns:
+          - "streamlit"
+          - "pandas"
+          - "numpy"
+          - "pyyaml"
+          - "tqdm"
+        update-types:
+          - "minor"
+          - "patch"
+
+      dev-tools:
+        patterns:
+          - "pytest"
+          - "pytest-cov"
+          - "ruff"
+          - "jupyter"
+          - "ipykernel"
+        update-types:
+          - "minor"
+          - "patch"
+
+    # Always allow security patches through immediately, ungrouped
+    allow:
+      - dependency-type: "all"
+
+    labels:
+      - "dependencies"
+      - "python"
+
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+
+    # Ignore major version bumps for core ML libs — these are breaking
+    ignore:
+      - dependency-name: "torch"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "transformer_lens"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "transformers"
+        update-types: ["version-update:semver-major"]
+
+  # ── GitHub Actions (if you add CI later) ───────────────────────────────────
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "chore(ci)"
