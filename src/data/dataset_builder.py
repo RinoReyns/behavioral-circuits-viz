@@ -8,9 +8,6 @@ import json
 import random
 from pathlib import Path
 
-
-from pathlib import Path
-
 # current file location (this script)
 SCRIPT_DIR = Path(__file__).resolve().parent
 

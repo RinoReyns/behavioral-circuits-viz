@@ -6,7 +6,6 @@ import hashlib
 # -----------------------
 # Repo root resolution
 # -----------------------
-from pathlib import Path
 
 # current file location (this script)
 SCRIPT_DIR = Path(__file__).resolve().parent
