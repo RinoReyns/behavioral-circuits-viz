@@ -1,0 +1,9 @@
+model:
+  name: pythia-1.4b
+  hf_name: EleutherAI/pythia-1.4b
+  n_layers: 24
+  n_heads: 16
+  d_model: 2048
+  d_head: 128
+  context_length: 2048
+  device: cuda

@@ -1,0 +1,18 @@
+experiment:
+  name: refusal_baseline
+  behavior: refusal
+  model_config: configs/model_gpt2_small.yaml
+  data:
+    pairs_file: data/pairs/refusal_pairs.jsonl
+    train_split: 0.8
+    val_split: 0.1
+    test_split: 0.1
+  probes:
+    method: logistic_regression
+    max_iter: 1000
+    cv_folds: 5
+  causal:
+    method: activation_patching
+    metric: logit_diff
+    n_samples: 50
+  output_dir: experiments/results/refusal/
