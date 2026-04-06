@@ -33,7 +33,7 @@ jobs:
         run: pip install --upgrade pip setuptools wheel
 
       - name: Install dependencies
-        run: pip install -e ".[dev]"
+        run: pip install -e ".[dev]" --no-build-isolation
 
       - name: Lint with ruff
         run: ruff check src/ experiments/ tests/
