@@ -1,9 +1,16 @@
 model:
-  name: gpt2
-  hf_name: gpt2
-  n_layers: 12
-  n_heads: 12
-  d_model: 768
-  d_head: 64
-  context_length: 1024
-  device: cpu   # change to cuda if available
+  id: gpt2-small
+  device: "cpu"
+
+  hf:
+    repo: gpt2
+    variant: "gpt2"
+
+  architecture:
+    n_layers: 12
+    n_heads: 12
+    d_model: 768
+    d_head: 64
+
+  context:
+    length: 1024
