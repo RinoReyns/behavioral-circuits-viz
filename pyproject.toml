@@ -11,7 +11,7 @@ dependencies = [
     "transformer_lens>=1.19.0",
     "torch>=2.11.0",
     "transformers==4.37.2",
-    "scikit-learn>=1.4.0",
+    "scikit-learn>=1.7.2",
     "plotly>=5.20.0",
     "matplotlib>=3.8.0",
     "streamlit>=1.32.0",
